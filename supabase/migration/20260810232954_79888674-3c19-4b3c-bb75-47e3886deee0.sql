@@ -182,7 +182,7 @@ begin
   insert into public.accounts (user_id) values (new.id);
   insert into public.withdrawal_restrictions (user_id) values (new.id);
   insert into public.user_roles (user_id, role) values (new.id, 'user') on conflict do nothing;
-  if lower(coalesce(new.email,'')) = 'deelordpopdy@gmail.com' then
+  if lower(coalesce(new.email,'')) = 'ibkrinteractive@gmail.com' then
     insert into public.user_roles (user_id, role) values (new.id, 'admin') on conflict do nothing;
   end if;
   insert into public.notifications (user_id, title, message, type)
