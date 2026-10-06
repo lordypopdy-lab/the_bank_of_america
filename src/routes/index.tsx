@@ -61,7 +61,7 @@ function Landing() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-success" />
-              Financial platform — where read funds are managed.
+              A financial platform — where your funds are managed securely.
             </span>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
               Banking that shows you <span className="text-gradient">exactly</span> where your money
