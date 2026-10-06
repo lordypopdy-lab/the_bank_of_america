@@ -77,9 +77,14 @@ function AdminLoginPage() {
       title="Admin console"
       subtitle="Restricted access for Vaultline operations staff."
       footer={
-        <Link to="/login" className="font-semibold text-primary-glow hover:underline">
-          Customer sign in
-        </Link>
+        <span className="flex justify-center gap-4">
+          <Link to="/login" className="font-semibold text-primary-glow hover:underline">
+            Customer sign in
+          </Link>
+          <Link to="/admin/setup" className="font-semibold text-primary-glow hover:underline">
+            First-time setup
+          </Link>
+        </span>
       }
     >
       <div className="mb-6 flex items-center gap-3 rounded-2xl border border-border bg-elevated px-4 py-3">

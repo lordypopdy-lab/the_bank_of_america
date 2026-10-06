@@ -29,6 +29,7 @@ import { Route as AdminAssetsRouteImport } from './routes/admin.assets'
 import { Route as AdminInvestmentsRouteImport } from './routes/admin.investments'
 import { Route as AdminKycRouteImport } from './routes/admin.kyc'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminSetupRouteImport } from './routes/admin.setup'
 import { Route as AdminSupportRouteImport } from './routes/admin.support'
 import { Route as AdminWithdrawalsRouteImport } from './routes/admin.withdrawals'
 import { Route as AuthenticatedInvestmentsIndexRouteImport } from './routes/_authenticated/investments.index'
@@ -137,6 +138,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminSetupRoute = AdminSetupRouteImport.update({
+  id: '/admin/setup',
+  path: '/admin/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminSupportRoute = AdminSupportRouteImport.update({
   id: '/admin/support',
   path: '/admin/support',
@@ -189,6 +195,7 @@ export interface FileRoutesByFullPath {
   '/admin/investments': typeof AdminInvestmentsRoute
   '/admin/kyc': typeof AdminKycRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/admin/support': typeof AdminSupportRoute
   '/admin/withdrawals': typeof AdminWithdrawalsRoute
   '/admin/': typeof AdminIndexRoute
@@ -216,6 +223,7 @@ export interface FileRoutesByTo {
   '/admin/investments': typeof AdminInvestmentsRoute
   '/admin/kyc': typeof AdminKycRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/admin/support': typeof AdminSupportRoute
   '/admin/withdrawals': typeof AdminWithdrawalsRoute
   '/admin': typeof AdminIndexRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   '/admin/investments': typeof AdminInvestmentsRoute
   '/admin/kyc': typeof AdminKycRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/admin/support': typeof AdminSupportRoute
   '/admin/withdrawals': typeof AdminWithdrawalsRoute
   '/admin/': typeof AdminIndexRoute
@@ -274,6 +283,7 @@ export interface FileRouteTypes {
     | '/admin/investments'
     | '/admin/kyc'
     | '/admin/login'
+    | '/admin/setup'
     | '/admin/support'
     | '/admin/withdrawals'
     | '/admin/'
@@ -301,6 +311,7 @@ export interface FileRouteTypes {
     | '/admin/investments'
     | '/admin/kyc'
     | '/admin/login'
+    | '/admin/setup'
     | '/admin/support'
     | '/admin/withdrawals'
     | '/admin'
@@ -329,6 +340,7 @@ export interface FileRouteTypes {
     | '/admin/investments'
     | '/admin/kyc'
     | '/admin/login'
+    | '/admin/setup'
     | '/admin/support'
     | '/admin/withdrawals'
     | '/admin/'
@@ -350,6 +362,7 @@ export interface RootRouteChildren {
   AdminInvestmentsRoute: typeof AdminInvestmentsRoute
   AdminKycRoute: typeof AdminKycRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  AdminSetupRoute: typeof AdminSetupRoute
   AdminSupportRoute: typeof AdminSupportRoute
   AdminWithdrawalsRoute: typeof AdminWithdrawalsRoute
   AdminIndexRoute: typeof AdminIndexRoute
@@ -499,6 +512,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/setup': {
+      id: '/admin/setup'
+      path: '/admin/setup'
+      fullPath: '/admin/setup'
+      preLoaderRoute: typeof AdminSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/support': {
       id: '/admin/support'
       path: '/admin/support'
@@ -585,6 +605,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminInvestmentsRoute: AdminInvestmentsRoute,
   AdminKycRoute: AdminKycRoute,
   AdminLoginRoute: AdminLoginRoute,
+  AdminSetupRoute: AdminSetupRoute,
   AdminSupportRoute: AdminSupportRoute,
   AdminWithdrawalsRoute: AdminWithdrawalsRoute,
   AdminIndexRoute: AdminIndexRoute,

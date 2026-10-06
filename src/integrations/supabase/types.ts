@@ -700,6 +700,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      active_admin_count: { Args: { _exclude?: string }; Returns: number }
       admin_adjust_balance: {
         Args: {
           _amount: number
@@ -902,6 +903,10 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_set_role: {
+        Args: { _make_admin: boolean; _reason: string; _target: string }
+        Returns: boolean
+      }
       admin_set_status: {
         Args: {
           _message: string
@@ -928,6 +933,7 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_setup_available: { Args: never; Returns: boolean }
       admin_support_conversations: {
         Args: never
         Returns: {
@@ -1132,6 +1138,7 @@ export type Database = {
         }[]
       }
       available_balance: { Args: { _user_id: string }; Returns: number }
+      claim_first_admin: { Args: never; Returns: boolean }
       clean_support_message: { Args: { _m: string }; Returns: string }
       close_investment: {
         Args: { _id: string; _reason?: string }

@@ -5,6 +5,7 @@ import { ArrowLeft, Bell, Loader2, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { AdminShell } from "@/components/AdminShell";
+import { AdminRoleCard } from "@/components/AdminRoleCard";
 import { ProfileAvatar } from "@/components/ProfileAvatar";
 import { StatusBadge } from "@/components/StatusBadge";
 import { TransactionRow } from "@/components/TransactionRow";
@@ -290,6 +291,7 @@ function AdminUserDetailPage() {
 
       <div className="grid gap-5 xl:grid-cols-[1fr_1.1fr]">
         <div className="space-y-5">
+          <AdminRoleCard userId={id} />
           <section className="surface-card p-6">
             <div className="flex items-center gap-4">
               <ProfileAvatar path={p.avatar_url} name={p.full_name} size="lg" />
