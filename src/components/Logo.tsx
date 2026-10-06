@@ -12,7 +12,7 @@ export function Logo({ compact, admin }: { compact?: boolean; admin?: boolean })
         <span className="flex flex-col leading-none">
           <span className="text-[15px] font-extrabold tracking-tight">Vaultline</span>
           <span className={cn("pt-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground")}>
-            {admin ? "Admin Console" : "Digital Banking"}
+            {admin ? "Admin Console" : "INTERACTIVE IBKR"}
           </span>
         </span>
       )}
