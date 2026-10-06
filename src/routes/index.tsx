@@ -61,7 +61,7 @@ function Landing() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-success" />
-              Financial demo platform — no real funds are moved
+              Financial platform — where read funds are managed.
             </span>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
               Banking that shows you <span className="text-gradient">exactly</span> where your money
@@ -101,7 +101,9 @@ function Landing() {
                     <p className="text-[10px] uppercase tracking-wider text-primary-foreground/60">
                       {label}
                     </p>
-                    <p className="numeric mt-1 text-sm font-bold text-primary-foreground">{value}</p>
+                    <p className="numeric mt-1 text-sm font-bold text-primary-foreground">
+                      {value}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -135,8 +137,12 @@ function Landing() {
       </main>
 
       <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        Vaultline is a banking-architecture demonstration platform. It is not connected to a real
-        bank and does not move real-world funds.
+        Vaultline is a modern investment platform designed to provide individuals with simple,
+        secure, and accessible tools for managing and growing their investments. Our platform brings
+        investment opportunities, portfolio management, and financial insights together in one
+        seamless digital experience. Built with security, transparency, and reliability in mind,
+        Vaultline is designed to help investors make informed decisions and manage their financial
+        goals with confidence.
       </footer>
     </div>
   );
