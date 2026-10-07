@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790749049058,
+      "tag": "0000_support_chat",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790832465666,
+      "tag": "0001_support_message_soft_delete",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790832786387,
+      "tag": "0002_support_read_clears_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791319918626,
+      "tag": "0003_secure_admin_management",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791332538687,
+      "tag": "0004_claim_first_admin_requires_verified_email",
+      "breakpoints": true
+    }
+  ]
+}
