@@ -63,7 +63,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await loadContext(data.session?.user.id);
       setLoading(false);
     });
-
+    
     return () => {
       active = false;
       sub.subscription.unsubscribe();

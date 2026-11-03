@@ -57,6 +57,20 @@ function AssetPage() {
   const close = useCloseInvestment();
   const [amount, setAmount] = useState("");
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   const mine = useMemo(
     () => (positions.data ?? []).filter((p) => p.asset_id === id),
     [positions.data, id],

@@ -47,6 +47,20 @@ function ProfilePage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [uploading, setUploading] = useState(false);
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   useEffect(() => {
     setForm({ full_name: profile?.full_name ?? "", phone: profile?.phone ?? "" });
   }, [profile?.full_name, profile?.phone]);

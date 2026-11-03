@@ -44,6 +44,20 @@ function InvestmentsPage() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("all");
   const [search, setSearch] = useState("");
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   const list = useMemo(() => {
     const q = search.trim().toLowerCase();
     return (assets.data ?? []).filter(

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, Lock, Receipt, TrendingUp, Wallet } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { BalanceCard } from "@/components/BalanceCard";
@@ -46,6 +46,22 @@ function DashboardPage() {
   const withdrawals = useWithdrawals(uid);
   const locks = useFundLocks(uid);
   const restriction = useRestriction(uid);
+
+  const navigate = useNavigate();
+
+////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
 
   const activeLocks = (locks.data ?? []).filter((l) => l.status === "active");
   const recentWithdrawals = (withdrawals.data ?? []).slice(0, 3);

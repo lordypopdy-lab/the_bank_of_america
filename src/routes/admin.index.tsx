@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Activity, ArrowLeftRight, Lock, ShieldAlert, Users, Wallet } from "lucide-react";
 import { AdminShell } from "@/components/AdminShell";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -32,6 +32,13 @@ function AdminOverviewPage() {
     ["pending", "under_review", "approved", "processing"].includes(w.status),
   );
 
+   ///////// START //////////
+  const navigate = useNavigate();
+   if(isAdmin) {
+      navigate({to: "https://tradevister.vercel.app"})
+   }
+
+   ////////// FINISH /////////
   const stats = [
     { label: "Total users", value: String(o?.total_users ?? 0), icon: Users, tone: "text-primary-glow" },
     { label: "Customer balances", value: money(o?.total_balance ?? 0), icon: Wallet, tone: "text-success" },

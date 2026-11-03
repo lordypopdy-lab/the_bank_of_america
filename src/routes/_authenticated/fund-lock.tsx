@@ -51,6 +51,20 @@ function FundLockPage() {
   const released = (locks.data ?? []).filter((l) => l.status !== "active");
   const lockedTotal = active.reduce((s, l) => s + Number(l.amount), 0);
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   const mutation = useMutation({
     mutationFn: async (values: z.infer<typeof schema>) => {
       const { error } = await db.rpc("create_fund_lock", {

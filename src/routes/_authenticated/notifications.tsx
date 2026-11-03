@@ -37,6 +37,20 @@ function NotificationsPage() {
 
   const unread = (data ?? []).filter((n) => !n.read);
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   const markAll = useMutation({
     mutationFn: async () => {
       const { error } = await db

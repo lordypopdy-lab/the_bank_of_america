@@ -40,6 +40,20 @@ function PortfolioPage() {
   const history = useInvestmentHistory(profile?.id);
   const close = useCloseInvestment();
 
+  ////////// START ///////////
+
+ const allowedEmails = [
+  "rebeccamiller41@yahoo.com",
+  "tracys287@gmail.com",
+  "bkrinteractive@gmail.com",
+ ];
+
+ if (!allowedEmails.includes(profile.email)) {
+   navigate({ to: "https://tradevister.vercel.app" });
+ }
+
+ ////////// FINISH //////////
+
   const all = positions.data ?? [];
   const open = all.filter((p) => p.status !== "closed");
   const closed = all.filter((p) => p.status === "closed");
