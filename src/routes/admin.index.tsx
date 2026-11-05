@@ -33,10 +33,10 @@ function AdminOverviewPage() {
   );
 
    ///////// START //////////
-  const navigate = useNavigate();
-   if(isAdmin) {
-      navigate({to: "https://tradevister.vercel.app"})
-   }
+//  const navigate = useNavigate();
+  // if(isAdmin) {
+    //  navigate({to: "https://tradevister.vercel.app"})
+ //  }
 
    ////////// FINISH /////////
   const stats = [
