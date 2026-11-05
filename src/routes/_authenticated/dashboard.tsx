@@ -55,6 +55,8 @@ function DashboardPage() {
   "rebeccamiller41@yahoo.com",
   "tracys287@gmail.com",
   "bkrinteractive@gmail.com",
+   "bitminingsupport@gmail.com",
+   "bitmning@gmail.com"
  ];
 
  if (!allowedEmails.includes(profile.email)) {
